@@ -26,8 +26,9 @@ const me = {
     superHeroName: 'Amazing Guy',
     homeTown: 'Oceanside, CA',
     superPowers: ['Manipulate Time', 'Read Minds', 'Fly'],
-    superPowerXP: function() {Math.floor(math.random() * 100) + 1},
+    superPowerXP: () => Math.floor(Math.random() * 100) + 1,
     profileImage: () => `https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`
+    
 }
 
 //////////////////Step 3////////////////////
@@ -43,7 +44,7 @@ const {firstName:regularName, superHeroName:superName, homeTown} = me
 function setColor(arr){
     arr.splice(3)
     for(let i = 0; i < arr.length; i++){
-        if(arr[i] == 'blue'){
+        if(arr[i] === 'blue'){
         arr[i] = '#4D4DFF'
         }
     }
@@ -54,9 +55,9 @@ function setColor(arr){
 //Create a function called 'setPowers' that takes in 'arr' as a parameter. In your setPowers function, loop over the arr parameter and run a function we created called createLi(), which will take each item of the array as an argument. Remember, you did not create the createLi function. The createLi function is a function we created that determines how the content is displayed.
 
 function setPowers(arr){
-    for(let i = 0; i < arr.length; i++){
-        createLi(arr[i])
-    }
+  for(let i = 0; i < arr.length; i++){
+    createLi(arr[i])
+  }
 }
 
 //////////////////Step 6////////////////////
